@@ -107,3 +107,6 @@ conda 3.7.0</code></pre></div>
 <p>@cammerschooner</p>
 
   </article>
+
+### Installing development requirements
+<pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip install -r requirements.txt</code></pre>
