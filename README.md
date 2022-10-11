@@ -27,7 +27,7 @@ Graduation Project of faculty of Computer Science at Ain Shams University 2023
 <h2 id="requirements">Requirements</h2>
 
 <ul>
-  <li>Anaconda Python distribution installed and accessible</li>
+  <li>Anaconda Python distribution installed and accessible (See how to install)[https://docs.anaconda.com/anaconda/install/]</li>
 </ul>
 
 <h2 id="check-conda-is-installed-and-in-your-path">1. Check conda is installed and in your PATH</h2>
