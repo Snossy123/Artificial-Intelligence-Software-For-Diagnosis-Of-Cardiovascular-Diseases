@@ -23,10 +23,7 @@ Graduation Project of faculty of Computer Science at Ain Shams University 2023
   <li>Deactivate a virtual environment</li>
   <li>Delete a virtual environment</li>
 </ul>
-
-<h2 id="jargon">Jargon</h2>
-<p>link to PATH, </p>
-
+ 
 <h2 id="requirements">Requirements</h2>
 
 <ul>
