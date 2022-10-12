@@ -109,6 +109,6 @@ conda 3.7.0</code></pre></div>
   </article>
 
 ### Installing development requirements
-<pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip install -r requirements.txt</code></pre>
+<pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>conda install -r requirements.txt</code></pre>
 
 ### Get Your Conda Environment to Show in Jupyter Notebooks — the “Easy Way” [here](https://towardsdatascience.com/get-your-conda-environment-to-show-in-jupyter-notebooks-the-easy-way-17010b76e874)
