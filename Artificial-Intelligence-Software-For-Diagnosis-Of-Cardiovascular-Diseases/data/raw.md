@@ -6,7 +6,7 @@ This readme file provides information about the database used in a study that fo
 
 The ECG signal data used in this study were obtained from a public database called PhysioBank. Specifically, we downloaded four public databases of ECGs on normal, CAD, MI, and CHF as our experimental data. These databases are as follows:
 
-1. MIT-BIH Normal Sinus Rhythm Database (NSRDB)[https://physionet.org/content/nsrdb/1.0.0/]
+1. MIT-BIH Normal Sinus Rhythm Database [NSRDB](https://physionet.org/content/nsrdb/1.0.0/)
 2. St. Petersburg INCART 12-lead Arrhythmia Database (INCARTDB)
 3. PTB Diagnostic ECG Database (PTBDB)
 4. Beth Israel Deaconess Medical Centre (BIDMC) Congestive Heart Failure Database
