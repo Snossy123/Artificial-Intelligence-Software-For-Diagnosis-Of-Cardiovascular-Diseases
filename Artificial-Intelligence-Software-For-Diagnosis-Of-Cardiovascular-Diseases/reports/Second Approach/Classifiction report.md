@@ -1,5 +1,3 @@
-Refactored readme:
-
 ## Confusion Matrix
 
 |                   | True Positive | False Positive |
