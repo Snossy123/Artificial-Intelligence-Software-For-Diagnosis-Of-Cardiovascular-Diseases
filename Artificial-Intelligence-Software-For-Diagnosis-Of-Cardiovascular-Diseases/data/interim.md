@@ -20,7 +20,7 @@ The study utilized four databases of ECGs with different diagnostic types, leads
 - Diagnostic Type: CAD
 - Lead: I, II, III, aVR, aVL, aVF, V1, V2, V3, V4, V5, V6
 - Sampling Frequency: 257 Hz
-- Number: 7
+- Number: 17
 - Duration of Each Case: 30 minutes
 - Specific Cases: I01, I02, I20, I21, I22, I35, I36, I37, I38, I39, I44, I45, I46, I57, I58, I72, I73
 
