@@ -24,3 +24,7 @@
 
 ```
 
+# Data Process
+![Uploading Data Process.png…]()
+
+
