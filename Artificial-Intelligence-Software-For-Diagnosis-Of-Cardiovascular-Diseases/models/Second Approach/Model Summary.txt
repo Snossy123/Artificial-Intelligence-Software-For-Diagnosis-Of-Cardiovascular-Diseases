@@ -1,0 +1,344 @@
+Model: "model_42"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_43 (InputLayer)          [(None, 400, 1)]     0           []                               
+                                                                                                  
+ conv1d_1806 (Conv1D)           (None, 400, 8)       48          ['input_43[0][0]']               
+                                                                                                  
+ batch_normalization_126 (Batch  (None, 400, 8)      32          ['conv1d_1806[0][0]']            
+ Normalization)                                                                                   
+                                                                                                  
+ activation_126 (Activation)    (None, 400, 8)       0           ['batch_normalization_126[0][0]']
+                                                                                                  
+ max_pooling1d_126 (MaxPooling1  (None, 200, 8)      0           ['activation_126[0][0]']         
+ D)                                                                                               
+                                                                                                  
+ conv1d_1807 (Conv1D)           (None, 200, 10)      410         ['max_pooling1d_126[0][0]']      
+                                                                                                  
+ batch_normalization_127 (Batch  (None, 200, 10)     40          ['conv1d_1807[0][0]']            
+ Normalization)                                                                                   
+                                                                                                  
+ activation_127 (Activation)    (None, 200, 10)      0           ['batch_normalization_127[0][0]']
+                                                                                                  
+ max_pooling1d_127 (MaxPooling1  (None, 100, 10)     0           ['activation_127[0][0]']         
+ D)                                                                                               
+                                                                                                  
+ conv1d_1808 (Conv1D)           (None, 100, 16)      816         ['max_pooling1d_127[0][0]']      
+                                                                                                  
+ batch_normalization_128 (Batch  (None, 100, 16)     64          ['conv1d_1808[0][0]']            
+ Normalization)                                                                                   
+                                                                                                  
+ activation_128 (Activation)    (None, 100, 16)      0           ['batch_normalization_128[0][0]']
+                                                                                                  
+ max_pooling1d_128 (MaxPooling1  (None, 50, 16)      0           ['activation_128[0][0]']         
+ D)                                                                                               
+                                                                                                  
+ reshape_42 (Reshape)           (None, 800)          0           ['max_pooling1d_128[0][0]']      
+                                                                                                  
+ embedding_42 (Embedding)       (None, 800, 16)      12800       ['reshape_42[0][0]']             
+                                                                                                  
+ positional_encoding_42 (Positi  (None, 800, 16)     0           ['embedding_42[0][0]']           
+ onalEncoding)                                                                                    
+                                                                                                  
+ conv1d_1809 (Conv1D)           (None, 800, 32)      544         ['positional_encoding_42[0][0]'] 
+                                                                                                  
+ conv1d_1810 (Conv1D)           (None, 800, 32)      544         ['positional_encoding_42[0][0]'] 
+                                                                                                  
+ conv1d_1811 (Conv1D)           (None, 800, 32)      544         ['positional_encoding_42[0][0]'] 
+                                                                                                  
+ attention_336 (Attention)      (None, 800, 32)      1           ['conv1d_1809[0][0]',            
+                                                                  'conv1d_1810[0][0]',            
+                                                                  'conv1d_1811[0][0]']            
+                                                                                                  
+ dropout_1050 (Dropout)         (None, 800, 32)      0           ['attention_336[0][0]']          
+                                                                                                  
+ dense_714 (Dense)              (None, 800, 16)      528         ['dropout_1050[0][0]']           
+                                                                                                  
+ add_672 (Add)                  (None, 800, 16)      0           ['positional_encoding_42[0][0]', 
+                                                                  'dense_714[0][0]']              
+                                                                                                  
+ layer_normalization_672 (Layer  (None, 800, 16)     32          ['add_672[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1812 (Conv1D)           (None, 800, 64)      1088        ['layer_normalization_672[0][0]']
+                                                                                                  
+ dropout_1051 (Dropout)         (None, 800, 64)      0           ['conv1d_1812[0][0]']            
+                                                                                                  
+ conv1d_1813 (Conv1D)           (None, 800, 64)      4160        ['dropout_1051[0][0]']           
+                                                                                                  
+ dropout_1052 (Dropout)         (None, 800, 64)      0           ['conv1d_1813[0][0]']            
+                                                                                                  
+ dense_715 (Dense)              (None, 800, 16)      1040        ['dropout_1052[0][0]']           
+                                                                                                  
+ add_673 (Add)                  (None, 800, 16)      0           ['layer_normalization_672[0][0]',
+                                                                  'dense_715[0][0]']              
+                                                                                                  
+ layer_normalization_673 (Layer  (None, 800, 16)     32          ['add_673[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1814 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_673[0][0]']
+                                                                                                  
+ conv1d_1815 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_673[0][0]']
+                                                                                                  
+ conv1d_1816 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_673[0][0]']
+                                                                                                  
+ attention_337 (Attention)      (None, 800, 32)      1           ['conv1d_1814[0][0]',            
+                                                                  'conv1d_1815[0][0]',            
+                                                                  'conv1d_1816[0][0]']            
+                                                                                                  
+ dropout_1053 (Dropout)         (None, 800, 32)      0           ['attention_337[0][0]']          
+                                                                                                  
+ dense_716 (Dense)              (None, 800, 16)      528         ['dropout_1053[0][0]']           
+                                                                                                  
+ add_674 (Add)                  (None, 800, 16)      0           ['layer_normalization_673[0][0]',
+                                                                  'dense_716[0][0]']              
+                                                                                                  
+ layer_normalization_674 (Layer  (None, 800, 16)     32          ['add_674[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1817 (Conv1D)           (None, 800, 64)      1088        ['layer_normalization_674[0][0]']
+                                                                                                  
+ dropout_1054 (Dropout)         (None, 800, 64)      0           ['conv1d_1817[0][0]']            
+                                                                                                  
+ conv1d_1818 (Conv1D)           (None, 800, 64)      4160        ['dropout_1054[0][0]']           
+                                                                                                  
+ dropout_1055 (Dropout)         (None, 800, 64)      0           ['conv1d_1818[0][0]']            
+                                                                                                  
+ dense_717 (Dense)              (None, 800, 16)      1040        ['dropout_1055[0][0]']           
+                                                                                                  
+ add_675 (Add)                  (None, 800, 16)      0           ['layer_normalization_674[0][0]',
+                                                                  'dense_717[0][0]']              
+                                                                                                  
+ layer_normalization_675 (Layer  (None, 800, 16)     32          ['add_675[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1819 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_675[0][0]']
+                                                                                                  
+ conv1d_1820 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_675[0][0]']
+                                                                                                  
+ conv1d_1821 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_675[0][0]']
+                                                                                                  
+ attention_338 (Attention)      (None, 800, 32)      1           ['conv1d_1819[0][0]',            
+                                                                  'conv1d_1820[0][0]',            
+                                                                  'conv1d_1821[0][0]']            
+                                                                                                  
+ dropout_1056 (Dropout)         (None, 800, 32)      0           ['attention_338[0][0]']          
+                                                                                                  
+ dense_718 (Dense)              (None, 800, 16)      528         ['dropout_1056[0][0]']           
+                                                                                                  
+ add_676 (Add)                  (None, 800, 16)      0           ['layer_normalization_675[0][0]',
+                                                                  'dense_718[0][0]']              
+                                                                                                  
+ layer_normalization_676 (Layer  (None, 800, 16)     32          ['add_676[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1822 (Conv1D)           (None, 800, 64)      1088        ['layer_normalization_676[0][0]']
+                                                                                                  
+ dropout_1057 (Dropout)         (None, 800, 64)      0           ['conv1d_1822[0][0]']            
+                                                                                                  
+ conv1d_1823 (Conv1D)           (None, 800, 64)      4160        ['dropout_1057[0][0]']           
+                                                                                                  
+ dropout_1058 (Dropout)         (None, 800, 64)      0           ['conv1d_1823[0][0]']            
+                                                                                                  
+ dense_719 (Dense)              (None, 800, 16)      1040        ['dropout_1058[0][0]']           
+                                                                                                  
+ add_677 (Add)                  (None, 800, 16)      0           ['layer_normalization_676[0][0]',
+                                                                  'dense_719[0][0]']              
+                                                                                                  
+ layer_normalization_677 (Layer  (None, 800, 16)     32          ['add_677[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1824 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_677[0][0]']
+                                                                                                  
+ conv1d_1825 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_677[0][0]']
+                                                                                                  
+ conv1d_1826 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_677[0][0]']
+                                                                                                  
+ attention_339 (Attention)      (None, 800, 32)      1           ['conv1d_1824[0][0]',            
+                                                                  'conv1d_1825[0][0]',            
+                                                                  'conv1d_1826[0][0]']            
+                                                                                                  
+ dropout_1059 (Dropout)         (None, 800, 32)      0           ['attention_339[0][0]']          
+                                                                                                  
+ dense_720 (Dense)              (None, 800, 16)      528         ['dropout_1059[0][0]']           
+                                                                                                  
+ add_678 (Add)                  (None, 800, 16)      0           ['layer_normalization_677[0][0]',
+                                                                  'dense_720[0][0]']              
+                                                                                                  
+ layer_normalization_678 (Layer  (None, 800, 16)     32          ['add_678[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1827 (Conv1D)           (None, 800, 64)      1088        ['layer_normalization_678[0][0]']
+                                                                                                  
+ dropout_1060 (Dropout)         (None, 800, 64)      0           ['conv1d_1827[0][0]']            
+                                                                                                  
+ conv1d_1828 (Conv1D)           (None, 800, 64)      4160        ['dropout_1060[0][0]']           
+                                                                                                  
+ dropout_1061 (Dropout)         (None, 800, 64)      0           ['conv1d_1828[0][0]']            
+                                                                                                  
+ dense_721 (Dense)              (None, 800, 16)      1040        ['dropout_1061[0][0]']           
+                                                                                                  
+ add_679 (Add)                  (None, 800, 16)      0           ['layer_normalization_678[0][0]',
+                                                                  'dense_721[0][0]']              
+                                                                                                  
+ layer_normalization_679 (Layer  (None, 800, 16)     32          ['add_679[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1829 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_679[0][0]']
+                                                                                                  
+ conv1d_1830 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_679[0][0]']
+                                                                                                  
+ conv1d_1831 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_679[0][0]']
+                                                                                                  
+ attention_340 (Attention)      (None, 800, 32)      1           ['conv1d_1829[0][0]',            
+                                                                  'conv1d_1830[0][0]',            
+                                                                  'conv1d_1831[0][0]']            
+                                                                                                  
+ dropout_1062 (Dropout)         (None, 800, 32)      0           ['attention_340[0][0]']          
+                                                                                                  
+ dense_722 (Dense)              (None, 800, 16)      528         ['dropout_1062[0][0]']           
+                                                                                                  
+ add_680 (Add)                  (None, 800, 16)      0           ['layer_normalization_679[0][0]',
+                                                                  'dense_722[0][0]']              
+                                                                                                  
+ layer_normalization_680 (Layer  (None, 800, 16)     32          ['add_680[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1832 (Conv1D)           (None, 800, 64)      1088        ['layer_normalization_680[0][0]']
+                                                                                                  
+ dropout_1063 (Dropout)         (None, 800, 64)      0           ['conv1d_1832[0][0]']            
+                                                                                                  
+ conv1d_1833 (Conv1D)           (None, 800, 64)      4160        ['dropout_1063[0][0]']           
+                                                                                                  
+ dropout_1064 (Dropout)         (None, 800, 64)      0           ['conv1d_1833[0][0]']            
+                                                                                                  
+ dense_723 (Dense)              (None, 800, 16)      1040        ['dropout_1064[0][0]']           
+                                                                                                  
+ add_681 (Add)                  (None, 800, 16)      0           ['layer_normalization_680[0][0]',
+                                                                  'dense_723[0][0]']              
+                                                                                                  
+ layer_normalization_681 (Layer  (None, 800, 16)     32          ['add_681[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1834 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_681[0][0]']
+                                                                                                  
+ conv1d_1835 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_681[0][0]']
+                                                                                                  
+ conv1d_1836 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_681[0][0]']
+                                                                                                  
+ attention_341 (Attention)      (None, 800, 32)      1           ['conv1d_1834[0][0]',            
+                                                                  'conv1d_1835[0][0]',            
+                                                                  'conv1d_1836[0][0]']            
+                                                                                                  
+ dropout_1065 (Dropout)         (None, 800, 32)      0           ['attention_341[0][0]']          
+                                                                                                  
+ dense_724 (Dense)              (None, 800, 16)      528         ['dropout_1065[0][0]']           
+                                                                                                  
+ add_682 (Add)                  (None, 800, 16)      0           ['layer_normalization_681[0][0]',
+                                                                  'dense_724[0][0]']              
+                                                                                                  
+ layer_normalization_682 (Layer  (None, 800, 16)     32          ['add_682[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1837 (Conv1D)           (None, 800, 64)      1088        ['layer_normalization_682[0][0]']
+                                                                                                  
+ dropout_1066 (Dropout)         (None, 800, 64)      0           ['conv1d_1837[0][0]']            
+                                                                                                  
+ conv1d_1838 (Conv1D)           (None, 800, 64)      4160        ['dropout_1066[0][0]']           
+                                                                                                  
+ dropout_1067 (Dropout)         (None, 800, 64)      0           ['conv1d_1838[0][0]']            
+                                                                                                  
+ dense_725 (Dense)              (None, 800, 16)      1040        ['dropout_1067[0][0]']           
+                                                                                                  
+ add_683 (Add)                  (None, 800, 16)      0           ['layer_normalization_682[0][0]',
+                                                                  'dense_725[0][0]']              
+                                                                                                  
+ layer_normalization_683 (Layer  (None, 800, 16)     32          ['add_683[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1839 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_683[0][0]']
+                                                                                                  
+ conv1d_1840 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_683[0][0]']
+                                                                                                  
+ conv1d_1841 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_683[0][0]']
+                                                                                                  
+ attention_342 (Attention)      (None, 800, 32)      1           ['conv1d_1839[0][0]',            
+                                                                  'conv1d_1840[0][0]',            
+                                                                  'conv1d_1841[0][0]']            
+                                                                                                  
+ dropout_1068 (Dropout)         (None, 800, 32)      0           ['attention_342[0][0]']          
+                                                                                                  
+ dense_726 (Dense)              (None, 800, 16)      528         ['dropout_1068[0][0]']           
+                                                                                                  
+ add_684 (Add)                  (None, 800, 16)      0           ['layer_normalization_683[0][0]',
+                                                                  'dense_726[0][0]']              
+                                                                                                  
+ layer_normalization_684 (Layer  (None, 800, 16)     32          ['add_684[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1842 (Conv1D)           (None, 800, 64)      1088        ['layer_normalization_684[0][0]']
+                                                                                                  
+ dropout_1069 (Dropout)         (None, 800, 64)      0           ['conv1d_1842[0][0]']            
+                                                                                                  
+ conv1d_1843 (Conv1D)           (None, 800, 64)      4160        ['dropout_1069[0][0]']           
+                                                                                                  
+ dropout_1070 (Dropout)         (None, 800, 64)      0           ['conv1d_1843[0][0]']            
+                                                                                                  
+ dense_727 (Dense)              (None, 800, 16)      1040        ['dropout_1070[0][0]']           
+                                                                                                  
+ add_685 (Add)                  (None, 800, 16)      0           ['layer_normalization_684[0][0]',
+                                                                  'dense_727[0][0]']              
+                                                                                                  
+ layer_normalization_685 (Layer  (None, 800, 16)     32          ['add_685[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1844 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_685[0][0]']
+                                                                                                  
+ conv1d_1845 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_685[0][0]']
+                                                                                                  
+ conv1d_1846 (Conv1D)           (None, 800, 32)      544         ['layer_normalization_685[0][0]']
+                                                                                                  
+ attention_343 (Attention)      (None, 800, 32)      1           ['conv1d_1844[0][0]',            
+                                                                  'conv1d_1845[0][0]',            
+                                                                  'conv1d_1846[0][0]']            
+                                                                                                  
+ dropout_1071 (Dropout)         (None, 800, 32)      0           ['attention_343[0][0]']          
+                                                                                                  
+ dense_728 (Dense)              (None, 800, 16)      528         ['dropout_1071[0][0]']           
+                                                                                                  
+ add_686 (Add)                  (None, 800, 16)      0           ['layer_normalization_685[0][0]',
+                                                                  'dense_728[0][0]']              
+                                                                                                  
+ layer_normalization_686 (Layer  (None, 800, 16)     32          ['add_686[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ conv1d_1847 (Conv1D)           (None, 800, 64)      1088        ['layer_normalization_686[0][0]']
+                                                                                                  
+ dropout_1072 (Dropout)         (None, 800, 64)      0           ['conv1d_1847[0][0]']            
+                                                                                                  
+ conv1d_1848 (Conv1D)           (None, 800, 64)      4160        ['dropout_1072[0][0]']           
+                                                                                                  
+ dropout_1073 (Dropout)         (None, 800, 64)      0           ['conv1d_1848[0][0]']            
+                                                                                                  
+ dense_729 (Dense)              (None, 800, 16)      1040        ['dropout_1073[0][0]']           
+                                                                                                  
+ add_687 (Add)                  (None, 800, 16)      0           ['layer_normalization_686[0][0]',
+                                                                  'dense_729[0][0]']              
+                                                                                                  
+ layer_normalization_687 (Layer  (None, 800, 16)     32          ['add_687[0][0]']                
+ Normalization)                                                                                   
+                                                                                                  
+ global_average_pooling1d_42 (G  (None, 16)          0           ['layer_normalization_687[0][0]']
+ lobalAveragePooling1D)                                                                           
+                                                                                                  
+ dropout_1074 (Dropout)         (None, 16)           0           ['global_average_pooling1d_42[0][
+                                                                 0]']                             
+                                                                                                  
+ dense_730 (Dense)              (None, 4)            68          ['dropout_1074[0][0]']           
+                                                                                                  
+==================================================================================================
+Total params: 82,382
+Trainable params: 82,314
+Non-trainable params: 68
+__________________________________________________________________________________________________
