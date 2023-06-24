@@ -25,6 +25,7 @@
 ```
 
 # Data Process
-![Uploading Data Process.png…]()
+![Data Process](https://github.com/Snossy123/Artificial-Intelligence-Software-For-Diagnosis-Of-Cardiovascular-Diseases/assets/61948065/6e7d7cdb-194a-42c6-a35e-d6f76ed147ba)
+
 
 
