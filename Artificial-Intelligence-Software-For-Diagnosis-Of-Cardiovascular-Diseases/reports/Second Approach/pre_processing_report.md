@@ -1,5 +1,3 @@
-Here's a data science report for the previous code:
-
 ### Introduction
 The purpose of this code is to build training and testing datasets for classification using ECG signals from different databases. The code extracts heartbeats from the ECG signals and balances the number of samples for each class to avoid class imbalance.
 
