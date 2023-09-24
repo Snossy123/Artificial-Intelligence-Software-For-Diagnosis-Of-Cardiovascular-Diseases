@@ -1,0 +1,30 @@
+Model: "CRFormer"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_5 (InputLayer)           [(None, 1000, 1)]    0           []                               
+                                                                                                  
+ conv1d_8 (Conv1D)              (None, 985, 4)       68          ['input_5[0][0]']                
+                                                                                                  
+ batch_normalization_8 (BatchNo  (None, 985, 4)      16          ['conv1d_8[0][0]']               
+ rmalization)                                                                                     
+                                                                                                  
+ max_pooling1d_24 (MaxPooling1D  (None, 492, 4)      0           ['batch_normalization_8[0][0]']  
+ )                                                                                                
+                                                                                                  
+ conv1d_9 (Conv1D)              (None, 485, 6)       198         ['max_pooling1d_24[0][0]']       
+                                                                                                  
+ batch_normalization_9 (BatchNo  (None, 485, 6)      24          ['conv1d_9[0][0]']               
+ rmalization)                                                                                     
+                                                                                                  
+ max_pooling1d_25 (MaxPooling1D  (None, 242, 6)      0           ['batch_normalization_9[0][0]']  
+ )                                                                                                
+                                                                                                  
+ res1a_branch2a (Conv1D)        (None, 242, 8)       56          ['max_pooling1d_25[0][0]']       
+                                                                                                  
+ res1a_branch2b (Conv1D)        (None, 242, 8)       72          ['res1a_branch2a[0][0]']         
+...
+Trainable params: 367,098
+Non-trainable params: 20
+__________________________________________________________________________________________________
+None

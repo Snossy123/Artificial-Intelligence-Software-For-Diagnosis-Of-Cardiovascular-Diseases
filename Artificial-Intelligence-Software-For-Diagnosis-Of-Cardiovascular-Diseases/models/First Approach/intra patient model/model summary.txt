@@ -1,0 +1,30 @@
+Model: "CRFormer"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_2 (InputLayer)           [(None, 1000, 1)]    0           []                               
+                                                                                                  
+ conv1d_2 (Conv1D)              (None, 985, 4)       68          ['input_2[0][0]']                
+                                                                                                  
+ batch_normalization_2 (BatchNo  (None, 985, 4)      16          ['conv1d_2[0][0]']               
+ rmalization)                                                                                     
+                                                                                                  
+ max_pooling1d_6 (MaxPooling1D)  (None, 492, 4)      0           ['batch_normalization_2[0][0]']  
+                                                                                                  
+ conv1d_3 (Conv1D)              (None, 485, 6)       198         ['max_pooling1d_6[0][0]']        
+                                                                                                  
+ batch_normalization_3 (BatchNo  (None, 485, 6)      24          ['conv1d_3[0][0]']               
+ rmalization)                                                                                     
+                                                                                                  
+ max_pooling1d_7 (MaxPooling1D)  (None, 242, 6)      0           ['batch_normalization_3[0][0]']  
+                                                                                                  
+ res1a_branch2a (Conv1D)        (None, 242, 8)       56          ['max_pooling1d_7[0][0]']        
+                                                                                                  
+ bn1a_branch2a (BatchNormalizat  (None, 242, 8)      968         ['res1a_branch2a[0][0]']         
+ ion)                                                                                             
+                                                                                                  
+...
+Trainable params: 416,308
+Non-trainable params: 49,230
+__________________________________________________________________________________________________
+None
